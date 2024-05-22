@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel File Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #030303;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 4px;
+            padding: 20px;
+            background-color: hsl(0, 0%, 95%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+        }
+
+        label {
+            color: blue;
+            margin-left: 50%;
+        }
+
+        p {
+            margin-bottom: 3px;
+            margin-left: 1px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compare Excel Files</h1>
+        <label for="">Old File</label>
+        <input type="file" id="oldFile" accept=".xlsx">
+        <label for="">New File</label>
+        <input type="file" id="newFile" accept=".xlsx">
+        <button onclick="compareFiles()">Compare</button>
+        <button onclick="exportHighlightedFile()">Export Highlighted File</button>
+        <div id="output"></div>
+
+        <p>@ Pavan Kumar</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="compare.js"></script>
+</body>
+
+</html>
